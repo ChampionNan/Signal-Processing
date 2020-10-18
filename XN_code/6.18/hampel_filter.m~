@@ -1,0 +1,42 @@
+abstemp=abs(Sitstand);
+n=length(Sitstand);
+[ham,j]=hampel(abstemp,100000);
+% [ham1,j]=hampel(abstemp,10000);
+% [ham2,j]=hampel(abstemp,15000);
+% [ham3,j]=hampel(abstemp,50000);
+
+savi=smooth(abstemp,4000,'sgolay');
+sgf = sgolayfilt(abstemp,1,4001);
+
+subplot(4,1,1)
+plot(ham(10000000:20000000));
+ylabel('hampelÂË²¨');
+
+% subplot(5,1,2)
+% plot(ham1(10000000:20000000));
+% ylabel('hampelÂË²¨');
+% 
+% subplot(5,1,3)
+% plot(ham2(10000000:20000000));
+% ylabel('hampelÂË²¨');
+% 
+% subplot(5,1,4)
+% plot(ham3(10000000:20000000));
+% ylabel('hampelÂË²¨');
+
+subplot(4,1,2)
+plot(sgf(10000000:20000000));
+ylabel('saviÂË²¨');
+
+subplot(4,1,3)
+plot(z(1000:2000));
+ylabel('movingÂË²¨');
+
+
+subplot(4,1,4);
+plot(abstemp(10000000:20000000))
+ylabel('·ùÖµ');
+
+for m=30:1
+    h
+end
